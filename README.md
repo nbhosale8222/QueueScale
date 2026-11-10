@@ -363,7 +363,38 @@ Add your dashboard screenshots to `docs/screenshots/` and use the following imag
 ![Container Resource Monitoring](docs/screenshots/resource_monitoring.png)
 
 ---
+##  Benchmark Execution Evidence
 
+Both configurations were tested using 500 registration requests with a concurrency level of 50.
+
+### 1. Fixed Worker Configuration
+
+The system was configured with two fixed background workers.
+
+![Fixed Worker Benchmark Results](docs/screenshots/fixed_worker_benchmark_results.png)
+
+### 2. KEDA Autoscaling Configuration
+
+The system dynamically scaled background workers according to RabbitMQ queue length.
+
+![KEDA Benchmark Results](docs/screenshots/keda_benchmark_results.png)
+
+### 3. Performance Comparison
+
+The following table summarizes the measured results from both configurations.
+
+| Metric | Fixed Workers (2) | KEDA Autoscaling |
+|---|---:|---:|
+| Total Requests | 500 | 500 |
+| Concurrency | 50 | 50 |
+| Successful Registrations | 500 | 500 |
+| Failed Registrations | 0 | 0 |
+| Total Duration | 523.87 s | 237.14 s |
+| Throughput | 0.95 req/s | 2.11 req/s |
+| Average Completion Latency | 49.864 s | 22.613 s |
+| P95 Completion Latency | 52.960 s | 28.645 s |
+
+KEDA reduced total execution time by 54.73% and achieved approximately 2.22 times the throughput of the fixed-worker configuration.
 ##  Performance Evaluation
 
 QueueScale was evaluated using two configurations:
