@@ -38,8 +38,7 @@ QueueScale follows a queue-based, event-driven architecture that separates incom
 
 ### Architecture Diagram
 
-![QueueScale System Architecture](architecture.png)
-
+![QueueScale System Architecture](docs/architecture/architecture.png)
 **Architecture Components**
 
 | Component | Responsibility |
