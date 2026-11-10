@@ -1,4 +1,4 @@
-# QueueScale 🚀
+# QueueScale 
 
 ### An Intelligent Queue-Based Traffic Management and Auto-Scaling System for Cloud-Native Applications
 
@@ -10,7 +10,7 @@
 
 ---
 
-## 📌 Overview
+##  Overview
 
 QueueScale is a cloud-native application designed to handle sudden traffic spikes through asynchronous message processing and event-driven worker autoscaling.
 
@@ -20,7 +20,7 @@ QueueScale addresses this challenge by introducing a message queue between reque
 
 The system integrates FastAPI, PostgreSQL, Docker, Kubernetes, Prometheus, and Grafana to provide an efficient, scalable, and observable request-processing architecture.
 
-### 🎯 Project Objectives
+###  Project Objectives
 
 - Handle sudden increases in incoming requests without overloading application workers.
 - Implement asynchronous request processing using RabbitMQ.
@@ -32,7 +32,7 @@ The system integrates FastAPI, PostgreSQL, Docker, Kubernetes, Prometheus, and G
 
 ---
 
-## 🏗️ System Architecture
+##  System Architecture
 
 QueueScale follows a queue-based, event-driven architecture that separates incoming request handling from background processing.
 
@@ -56,7 +56,7 @@ QueueScale follows a queue-based, event-driven architecture that separates incom
 
 ---
 
-## 🔄 System Workflow
+##  System Workflow
 
 The QueueScale processing pipeline works as follows:
 
@@ -80,7 +80,7 @@ This architecture helps prevent long-running background operations from blocking
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 | Category | Technologies |
 |---|---|
@@ -99,7 +99,7 @@ This architecture helps prevent long-running background operations from blocking
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```text
 QueueScale/
@@ -171,7 +171,7 @@ Make sure the following tools are installed:
 
 ---
 
-## 🚀 Installation and Execution
+##  Installation and Execution
 
 ### 1. Clone the Repository
 
@@ -269,7 +269,7 @@ http://localhost:9090
 
 ---
 
-## 🔌 API Endpoints
+##  API Endpoints
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -293,7 +293,7 @@ The API returns a request identifier that can be used to track the registration'
 
 ---
 
-## 📈 KEDA Autoscaling Configuration
+##  KEDA Autoscaling Configuration
 
 KEDA monitors RabbitMQ queue length and automatically adjusts the number of background worker replicas.
 
@@ -323,7 +323,7 @@ KEDA monitors RabbitMQ queue length and automatically adjusts the number of back
 
 ---
 
-## 📊 Monitoring and Observability
+##  Monitoring and Observability
 
 QueueScale integrates Prometheus and Grafana to provide real-time visibility into application performance and infrastructure behaviour.
 
@@ -364,7 +364,7 @@ Add your dashboard screenshots to `docs/screenshots/` and use the following imag
 
 ---
 
-## 🧪 Performance Evaluation
+##  Performance Evaluation
 
 QueueScale was evaluated using two configurations:
 
@@ -482,7 +482,7 @@ Store the screenshots in `docs/screenshots/`.
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
 - **Asynchronous Processing:** Separates request reception from background processing.
 - **Message Queuing:** RabbitMQ buffers incoming requests during traffic spikes.
@@ -495,7 +495,7 @@ Store the screenshots in `docs/screenshots/`.
 
 ---
 
-## 🔮 Future Enhancements
+##  Future Enhancements
 
 - Implement bounded message retries.
 - Introduce a Dead Letter Queue (DLQ) for failed messages.
@@ -520,7 +520,7 @@ These results highlight the potential of queue-based autoscaling for handling bu
 
 ---
 
-## 👨‍💻 Project Team
+##  Project Team
 
 | Name | Registration Number |
 |---|---|
@@ -530,7 +530,7 @@ These results highlight the potential of queue-based autoscaling for handling bu
 
 ---
 
-## 🔗 Repository
+##  Repository
 
 **GitHub:** [QueueScale — GitHub Repository](https://github.com/nbhosale8222/QueueScale)
 
