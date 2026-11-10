@@ -1,0 +1,10 @@
+- job_name: rabbitmq
+  scrape_interval: 15s
+  metrics_path: /metrics/detailed
+  params:
+    family:
+      - queue_coarse_metrics
+      - queue_consumer_count
+  static_configs:
+    - targets:
+        - host.docker.internal:15692

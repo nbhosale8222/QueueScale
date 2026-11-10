@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: queuescale-api
+  namespace: queuescale
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: queuescale-api
+  template:
+    metadata:
+      labels:
+        app: queuescale-api
+    spec:
+      containers:
+        - name: api
+          image: queuescale-api:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+          env:
+            - name: DATABASE_URL
+              value: "postgresql+psycopg://queuescale:queuescale_dev@host.docker.internal:5435/queuescale"
+            - name: RABBITMQ_HOST
+              value: "host.docker.internal"
+            - name: RABBITMQ_PORT
+              value: "5673"
+            - name: RABBITMQ_USER
+              value: "queuescale"
+            - name: RABBITMQ_PASSWORD
+              value: "queuescale_dev"
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 10
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 20
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi

@@ -1,0 +1,27 @@
+
+flowchart TB
+    Client["Client / Benchmark Script"]
+
+    API["FastAPI Registration API"]
+    DB[("PostgreSQL Database")]
+    MQ["RabbitMQ Message Queue"]
+
+    subgraph K8S["Docker Desktop Kubernetes"]
+        KEDA["KEDA Autoscaler"]
+        Worker["Python Background Workers"]
+    end
+
+    Prom["Prometheus"]
+    Grafana["Grafana Dashboard"]
+
+    Client --> API
+    API --> DB
+    API --> MQ
+    MQ --> Worker
+    KEDA -. "Monitors queue length" .-> MQ
+    KEDA -. "Scales replicas 0–5" .-> Worker
+
+    API -. "Metrics" .-> Prom
+    MQ -. "Metrics" .-> Prom
+    K8S -. "Container metrics" .-> Prom
+    Prom --> Grafana

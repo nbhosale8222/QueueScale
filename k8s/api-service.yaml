@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: queuescale-api
+  namespace: queuescale
+spec:
+  type: ClusterIP
+  selector:
+    app: queuescale-api
+  ports:
+    - name: http
+      port: 8000
+      targetPort: 8000
+      protocol: TCP

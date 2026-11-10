@@ -1,0 +1,8 @@
+{
+  "spec": {
+    "additionalScrapeConfigs": {
+      "name": "rabbitmq-additional-scrape-configs",
+      "key": "additional-scrape-configs.yaml"
+    }
+  }
+}

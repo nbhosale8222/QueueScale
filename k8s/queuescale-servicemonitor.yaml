@@ -1,0 +1,18 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: queuescale-api-monitor
+  namespace: monitoring
+  labels:
+    release: queuescale-monitoring
+spec:
+  namespaceSelector:
+    matchNames:
+      - queuescale
+  selector:
+    matchLabels:
+      release: queuescale-monitoring
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 15s
