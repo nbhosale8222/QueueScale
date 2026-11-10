@@ -467,51 +467,6 @@ The following additional tests were conducted using different workload sizes and
 
 *Note: The final matched 500-request comparison is reported separately above. Additional tests are not directly comparable when their concurrency settings differ.*
 
-### Performance Graphs
-
-The following graphs are generated using the benchmark CSV files and `generate_graphs.py`.
-
-**1. Average Completion Latency**
-
-![Average Completion Latency](average_completion_latency.png)
-
-**2. P95 Completion Latency**
-
-![P95 Completion Latency](p95_completion_latency.png)
-
-**3. Average Submission Latency**
-
-![Average Submission Latency](average_submission_latency.png)
-
----
-
-## 📸 Implementation Screenshots
-
-The following screenshots provide implementation evidence of QueueScale's KEDA autoscaling behaviour.
-
-Store the screenshots in `docs/screenshots/`.
-
-### 1. Initial Worker State
-
-![KEDA Initial Worker State](docs/screenshots/keda_initial_state.png)
-
-### 2. Dynamic Worker Scaling
-
-![KEDA Worker Scaling](docs/screenshots/keda_scaling.png)
-
-### 3. Peak Worker Replicas
-
-![KEDA Peak Worker Replicas](docs/screenshots/keda_peak_replicas.png)
-
-### 4. Worker Scale Down
-
-![KEDA Scale Down](docs/screenshots/keda_scale_down.png)
-
-### 5. Benchmark Comparison
-
-![QueueScale Benchmark Results](docs/screenshots/benchmark_comparison.png)
-
----
 
 ##  Key Features
 
